@@ -1,11 +1,6 @@
-import React from "react";
+import { RouterProvider } from "react-router-dom";
+import { router } from "router/router";
 
-function App() {
-  return (
-    <div className="App">
-      <h2>Ставки на спорт.</h2>
-    </div>
-  );
-}
-
-export default App;
+export const App = () => {
+  return <RouterProvider router={router} />;
+};
