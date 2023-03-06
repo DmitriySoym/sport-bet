@@ -6,4 +6,5 @@ export enum Color {
   WHITE = "var(--white)",
   BTNENTER = "var(--btn-enter)",
   BTNREG = "var(--btn-reg)",
+  TABNOTACTIVE = "var(--sort-button)",
 }

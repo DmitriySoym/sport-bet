@@ -9,6 +9,7 @@ HTML{
   --white: #ffffff;
   --btn-enter: #068845;
   --btn-reg: #ffb800;
+  --sort-button: rgba(49,48,55,0.1);
 }
 
 body{
@@ -17,5 +18,10 @@ body{
   background-color: #f3f3f3;
 }
 
+#root{
+  height: 99%;
+}
+
 ${nullStyle}
+
 `;

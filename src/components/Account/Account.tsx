@@ -32,7 +32,6 @@ export const Account = () => {
 
   const handleAuth = () => {
     setIsAuth(!isAuth);
-    console.log(isAuth);
   };
 
   let name = "Dima";
