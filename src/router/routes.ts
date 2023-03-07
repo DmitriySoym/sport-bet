@@ -1,5 +1,6 @@
 export enum ROUTE {
   HOME = "/sport-bet/",
-  DETAIL = "detail",
+  DETAILMMA = "detail/:endPoint/:id",
+  DETAILFOOTBALL = "detail/:id",
   NOT_FOUND = "*",
 }

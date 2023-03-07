@@ -24,5 +24,5 @@ export interface AllEvents {
   draw: number;
   totalRoundsMinus: number;
   TotalRoundsPlus: number;
-  id: number;
+  id: string;
 }

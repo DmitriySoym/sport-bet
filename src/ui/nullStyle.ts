@@ -56,6 +56,7 @@ export const nullStyle = css`
   a,
   a:visited {
     text-decoration: none;
+    color: inherit;
   }
   a:hover {
     text-decoration: none;

@@ -1,19 +1,20 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { AllEvents } from "types";
+import { ErrorMessage } from "./styles";
 
 interface IEventState {
-  events: AllEvents[];
+  event: AllEvents;
   isLoading: boolean;
   error: null | string;
 }
 
-export const fetchEvents = createAsyncThunk<
-  AllEvents[],
-  string,
+export const fetchDitailEvent = createAsyncThunk<
+  AllEvents,
+  { id: string; endPoint: string },
   { rejectValue: string }
->("events/fetchEvents", async (endPoint, { rejectWithValue }) => {
+>("event/fetchDitailEvent", async (params, { rejectWithValue }) => {
   const response = await fetch(
-    `https://64058b8beed195a99f856ad5.mockapi.io/sport-bet/${endPoint}`
+    `https://64058b8beed195a99f856ad5.mockapi.io/sport-bet/${params.endPoint}/${params.id}`
   );
   if (!response.ok) {
     return rejectWithValue("Server error");
@@ -23,25 +24,25 @@ export const fetchEvents = createAsyncThunk<
 });
 
 const initialState: IEventState = {
-  events: [],
+  event: {} as AllEvents,
   isLoading: false,
   error: null,
 };
 
-const eventsSlice = createSlice({
-  name: "events",
+const eventSlice = createSlice({
+  name: "event",
   initialState,
   reducers: {},
   extraReducers(builder) {
-    builder.addCase(fetchEvents.pending, (state) => {
+    builder.addCase(fetchDitailEvent.pending, (state) => {
       state.isLoading = true;
       state.error = null;
     });
-    builder.addCase(fetchEvents.fulfilled, (state, action) => {
+    builder.addCase(fetchDitailEvent.fulfilled, (state, action) => {
       state.isLoading = false;
-      state.events = action.payload;
+      state.event = action.payload;
     });
-    builder.addCase(fetchEvents.rejected, (state, action) => {
+    builder.addCase(fetchDitailEvent.rejected, (state, action) => {
       if (action.payload) {
         state.isLoading = false;
         state.error = action.payload;
@@ -50,4 +51,4 @@ const eventsSlice = createSlice({
   },
 });
 
-export default eventsSlice.reducer;
+export default eventSlice.reducer;

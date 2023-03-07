@@ -8,7 +8,7 @@ interface IProps {
 }
 
 export const FootballEvents = ({ footballEvents }: IProps) => {
-  const { isLoading, error, events } = useAppSelector(getAllEvents);
+  const { isLoading, error } = useAppSelector(getAllEvents);
 
   if (isLoading) {
     return <Spinner />;

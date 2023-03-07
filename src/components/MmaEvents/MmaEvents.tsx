@@ -1,5 +1,5 @@
 import { StyledArticles, ErrorMessage } from "./styles";
-import { Spinner } from "components";
+import { Spinner, MmaEvent } from "components";
 import { getAllEvents, useAppSelector } from "store";
 import { AllEvents } from "types";
 
@@ -22,7 +22,7 @@ export const MmaEvents = ({ mmaEvents }: IProps) => {
       {mmaEvents &&
         mmaEvents.length > 0 &&
         mmaEvents.map((mmaEvents: AllEvents) => {
-          return <li key={mmaEvents.id}>{mmaEvents.firstFighter}</li>;
+          return <MmaEvent mmaEvent={mmaEvents} key={mmaEvents.id} />;
         })}
     </StyledArticles>
   );

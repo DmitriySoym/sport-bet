@@ -1,5 +1,11 @@
-import { generatePath, Link } from "react-router-dom";
-import { Tabs, tabsItems, FootballEvents, MmaEvents } from "components";
+import { Link } from "react-router-dom";
+import {
+  Tabs,
+  tabsItems,
+  FootballEvents,
+  MmaEvents,
+  EventsTitle,
+} from "components";
 import { ROUTE } from "router";
 import { useEffect, useState } from "react";
 import { Tab } from "types";
@@ -18,14 +24,17 @@ export const HomePage = () => {
   const [endPoint, setEndPoint] = useState(tabsItems[0].id);
   const { events } = useAppSelector(getAllEvents);
   const dispatch = useAppDispatch();
+  const [titleLabel, setTitleLabel] = useState<string>("Предстоящие бои:");
 
   const handleActiveTab = (label: Tab) => {
     setActiveTab(label);
 
     if (label === tabsItems[0].label) {
       setEndPoint(tabsItems[0].id);
+      setTitleLabel("Предстоящие бои:");
     } else {
       setEndPoint(tabsItems[1].id);
+      setTitleLabel("Предстоящие матчи:");
     }
   };
 
@@ -40,7 +49,8 @@ export const HomePage = () => {
         tabsItems={tabsItems}
         onClick={handleActiveTab}
       />
-      <Link to={ROUTE.DETAIL}>Detail</Link>
+
+      <EventsTitle label={titleLabel} />
       {activeTab === tabsItems[0].label && <MmaEvents mmaEvents={events} />}
       {activeTab === tabsItems[1].label && (
         <FootballEvents footballEvents={events} />

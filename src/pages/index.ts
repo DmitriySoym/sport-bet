@@ -1,5 +1,6 @@
 import { HomePage } from "./HomePge/HomePage";
-import { DetailPage } from "./DetailPage/DetailPage";
+import { DetailMMAPage } from "./DetailMMAPage/DetailMMAPage";
 import { NotFoundPage } from "./NotFoundPage/NotFoundPage";
+import { DetailFootbalPage } from "./DetailFootbalPage/DetailFootbalPage";
 
-export { HomePage, DetailPage, NotFoundPage };
+export { HomePage, DetailMMAPage, NotFoundPage, DetailFootbalPage };

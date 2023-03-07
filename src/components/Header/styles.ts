@@ -24,10 +24,6 @@ const Logo = styled.div`
 `;
 
 const HeaderTitle = styled.h1`
-  /* font-size: 1.7rem;
-  color: ${Color.TITLE};
-  font-weight: 600; */
-
   display: block;
   width: 100%;
   white-space: nowrap;
