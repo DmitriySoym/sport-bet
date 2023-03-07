@@ -8,6 +8,10 @@ const Event = styled.li`
   color: ${Color.TEXT};
   cursor: pointer;
 
+  @media screen and (max-width: 568.98px) {
+    font-size: 1rem;
+  }
+
   &::after {
     content: "";
     display: block;

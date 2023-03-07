@@ -3,7 +3,7 @@ import styled from "styled-components";
 const StyledArticles = styled.ul`
   display: flex;
   flex-direction: column;
-  row-gap: 30px;
+  row-gap: 1rem;
 `;
 
 const ErrorMessage = styled.h2`

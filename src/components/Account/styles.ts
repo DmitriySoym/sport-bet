@@ -1,14 +1,20 @@
 import styled from "styled-components";
-// import { motion } from "framer-motion";
 import { Color } from "ui";
 
-// const Wrapper = styled(motion.div)`
 const Wrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
   width: 100%;
   padding-right: 25px;
+
+  @media screen and (max-width: 767.98px) {
+    grid-area: block3;
+  }
+
+  @media screen and (max-width: 568.98px) {
+    justify-content: flex-start;
+  }
 `;
 
 const StyledAccount = styled.div`
@@ -18,7 +24,14 @@ const StyledAccount = styled.div`
   align-items: center;
   max-width: 232px;
   width: 100%;
-  line-height: 2.6rem;
+  line-height: 2.2rem;
+
+  @media screen and (max-width: 568.98px) {
+    padding-top: 5px;
+    & svg {
+      height: 40px;
+    }
+  }
 `;
 
 const Btn = styled.p`
@@ -28,10 +41,6 @@ const Btn = styled.p`
   line-height: 34px;
   color: ${Color.TEXT};
   background-color: inherit;
-  /* &:hover {
-    cursor: pointer;
-
-  } */
 `;
 
 const UserLogo = styled.div`

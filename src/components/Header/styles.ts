@@ -6,8 +6,32 @@ const StyledHeader = styled.header`
   grid-template-columns: 200px auto 270px;
   place-items: center center;
   padding-top: 1rem;
+  padding-left: 0.5rem;
   height: 60px;
   width: 100%;
+
+  @media screen and (max-width: 767.98px) {
+    justify-items: start;
+    height: auto;
+    grid: 1fr 1fr / 1fr 1fr;
+    grid-template-areas:
+      "block1 block1"
+      "block2 block3";
+
+    & a {
+      grid-area: block2;
+    }
+  }
+
+  @media screen and (max-width: 568.98px) {
+    justify-items: start;
+    grid: 1fr 1fr 1fr/ 1fr;
+    grid-template-areas:
+      "block1"
+      "block2"
+      "block3";
+    padding-left: 0.5rem;
+  }
 `;
 
 const Logo = styled.div`
@@ -22,6 +46,11 @@ const Logo = styled.div`
   font-size: 1.5rem;
   font-style: italic;
   color: white;
+
+  @media screen and (max-width: 568.98px) {
+    font-size: 1.3rem;
+    height: 40px;
+  }
 `;
 
 const HeaderTitle = styled.h1`
@@ -29,6 +58,12 @@ const HeaderTitle = styled.h1`
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
+
+  @media screen and (max-width: 767.98px) {
+    grid-area: block1;
+    margin: 0 auto;
+    width: 90%;
+  }
 
   & span {
     display: inline-block;
@@ -74,6 +109,11 @@ const TitleText = styled.span`
   font-size: 1.7rem;
   color: ${Color.TITLE};
   font-weight: 600;
+
+  @media screen and (max-width: 568.98px) {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
 `;
 
 export { StyledHeader, Logo, HeaderTitle, TitleText };

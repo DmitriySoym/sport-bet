@@ -6,6 +6,7 @@ import { useAppSelector } from "./hooks/hooks";
 import { getDetailEvent } from "./selectors/detailEventSelector";
 import { fetchDitailEvent } from "./feautures/detailEventSlice/detailEventSlice";
 import { getEventInfo } from "./selectors/eventInfoSelector";
+import { setEventInfo } from "./feautures/eventInfoSlice/eventInfoSlice";
 
 export {
   store,
@@ -16,5 +17,6 @@ export {
   getDetailEvent,
   fetchDitailEvent,
   getEventInfo,
+  setEventInfo,
 };
 export type { AppDispatch, RootState };

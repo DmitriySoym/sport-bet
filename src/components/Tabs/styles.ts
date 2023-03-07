@@ -23,6 +23,11 @@ const StyledTab = styled.a<{ isActive: boolean }>`
   &:hover {
     color: ${Color.PRIMARY};
   }
+
+  @media screen and (max-width: 568.98px) {
+    margin-right: 0.5rem;
+    width: 120px;
+  }
 `;
 
 export { TabsWrapper, StyledTab };

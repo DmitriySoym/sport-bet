@@ -13,6 +13,10 @@ const StyledButton = styled.a<{ btnColor: string }>`
   text-transform: uppercase;
   border-radius: 5px;
   cursor: pointer;
+
+  @media screen and (max-width: 568.98px) {
+    font-weight: 500;
+  }
 `;
 
 export { StyledButton };

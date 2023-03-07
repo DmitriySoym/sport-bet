@@ -1,8 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AllEvents } from "types";
 import { Link } from "react-router-dom";
 import { ROUTE } from "router";
-import { Wrapper, EventName, Coefficient, DateWrapper, Button } from "./styles";
+import {
+  Wrapper,
+  EventName,
+  Coefficient,
+  DateWrapper,
+  Button,
+  WrapperItem,
+} from "./styles";
+import { useAppDispatch, setEventInfo } from "store";
 
 interface IProps {
   mmaEvent: AllEvents;
@@ -17,6 +25,17 @@ export const DetailMMAEvent = ({ mmaEvent }: IProps) => {
   const handleButtonEnable = () => {
     setButtonState(false);
   };
+  const dispatch = useAppDispatch();
+
+  const handleSubmit = () => {
+    dispatch(
+      setEventInfo({
+        firstTeam: mmaEvent.firstFighter,
+        secondTeam: mmaEvent.secondFighter,
+        eventType: "поединок",
+      })
+    );
+  };
 
   return (
     <div>
@@ -28,30 +47,32 @@ export const DetailMMAEvent = ({ mmaEvent }: IProps) => {
       </DateWrapper>
       <form action="#">
         <Wrapper>
-          <div>
+          <WrapperItem>
             <EventName>{mmaEvent.firstFighter} - победа</EventName>
             <Coefficient>
-              коэффициент - {mmaEvent.firstWin}{" "}
+              коэфф. - {mmaEvent.firstWin}{" "}
               <input type="radio" name="event" onChange={handleButtonEnable} />
             </Coefficient>
-          </div>
-          <div>
+          </WrapperItem>
+          <WrapperItem>
             <EventName>{mmaEvent.secondFighter} - победа</EventName>
             <Coefficient>
-              коэффициент - {mmaEvent.secondWin}{" "}
+              коэфф. - {mmaEvent.secondWin}{" "}
               <input type="radio" name="event" onChange={handleButtonEnable} />
             </Coefficient>
-          </div>
-          <div>
+          </WrapperItem>
+          <WrapperItem>
             <EventName>Ничья</EventName>
             <Coefficient>
-              коэффициент - {mmaEvent.draw}{" "}
+              коэфф. - {mmaEvent.draw}{" "}
               <input type="radio" name="event" onChange={handleButtonEnable} />
             </Coefficient>
-          </div>
+          </WrapperItem>
         </Wrapper>
         <Link to={ROUTE.HOME}>
-          <Button disabled={buttonState}>Сделать ставку</Button>
+          <Button disabled={buttonState} onClick={handleSubmit}>
+            Сделать ставку
+          </Button>
         </Link>
       </form>
     </div>

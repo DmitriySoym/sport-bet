@@ -5,6 +5,10 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 2rem;
+
+  @media screen and (max-width: 992.98px) {
+    padding: 1.5rem 1rem 0;
+  }
 `;
 const ErrorMessage = styled.h2`
   padding-bottom: 4rem;
