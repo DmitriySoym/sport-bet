@@ -10,6 +10,7 @@ HTML{
   --btn-enter: #068845;
   --btn-reg: #ffb800;
   --sort-button: rgba(49,48,55,0.1);
+  --footer: #6589a8;
 }
 
 body{
@@ -19,7 +20,7 @@ body{
 }
 
 #root{
-  height: 99%;
+  height: 100%;
 }
 
 ${nullStyle}

@@ -5,6 +5,7 @@ const StyledHeader = styled.header`
   display: grid;
   grid-template-columns: 200px auto 270px;
   place-items: center center;
+  padding-top: 1rem;
   height: 60px;
   width: 100%;
 `;

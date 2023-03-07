@@ -8,8 +8,19 @@ const Event = styled.li`
   color: ${Color.TEXT};
   cursor: pointer;
 
-  &:hover {
-    border-bottom: 1px solid ${Color.PRIMARY};
+  &::after {
+    content: "";
+    display: block;
+    position: relative;
+    background-color: ${Color.PRIMARY};
+    height: 2px;
+    width: 0%;
+    left: 50%;
+    transition: width 200ms ease-out;
+    transform: translateX(-50%);
+  }
+  &:hover::after {
+    width: 100%;
   }
 `;
 

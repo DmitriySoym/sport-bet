@@ -7,4 +7,5 @@ export enum Color {
   BTNENTER = "var(--btn-enter)",
   BTNREG = "var(--btn-reg)",
   TABNOTACTIVE = "var(--sort-button)",
+  FOOTER = "var(--footer)",
 }
