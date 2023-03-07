@@ -42,6 +42,7 @@ export const nullStyle = css`
   button,
   textarea {
     font-family: inherit;
+    cursor: pointer;
   }
   input::-ms-clear {
     display: none;

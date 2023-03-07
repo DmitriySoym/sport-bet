@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { Color } from "ui";
 
 const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   padding: 2rem;
 `;
 const ErrorMessage = styled.h2`
@@ -25,4 +27,10 @@ const ButtonBack = styled.button`
   cursor: pointer;
 `;
 
-export { ErrorMessage, ButtonBack, Wrapper };
+const Date = styled.div`
+  font-size: 1.1rem;
+  color: ${Color.TEXT};
+  line-height: 150%;
+`;
+
+export { ErrorMessage, ButtonBack, Wrapper, Date };

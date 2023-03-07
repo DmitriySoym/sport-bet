@@ -9,7 +9,7 @@ import {
   useAppSelector,
 } from "store";
 import { AllEvents } from "types";
-import { ErrorMessage, ButtonBack, Wrapper } from "./styles";
+import { ErrorMessage, ButtonBack, Wrapper, Date } from "./styles";
 
 interface IProps {
   mmaEvent: AllEvents;
@@ -39,6 +39,7 @@ export const DetailMMAPage = () => {
   return (
     <Wrapper>
       <ButtonBack onClick={handlwBack}>Назад</ButtonBack>
+
       <DetailMMAEvent mmaEvent={event} />
     </Wrapper>
   );
