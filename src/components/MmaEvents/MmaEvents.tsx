@@ -1,10 +1,10 @@
-import { StyledArticles, ErrorWrapper, ErrorMessage } from "./styles";
+import { StyledArticles, ErrorMessage } from "./styles";
 import { Spinner } from "components";
 import { getAllEvents, useAppSelector } from "store";
-import { IMma } from "types";
+import { AllEvents } from "types";
 
 interface IProps {
-  mmaEvents: IMma[];
+  mmaEvents: AllEvents[];
 }
 
 export const MmaEvents = ({ mmaEvents }: IProps) => {
@@ -14,16 +14,14 @@ export const MmaEvents = ({ mmaEvents }: IProps) => {
   if (isLoading) {
     return <Spinner />;
   } else if (error) {
-    <ErrorWrapper>
-      <ErrorMessage>Страница не может быть загружена.</ErrorMessage>
-    </ErrorWrapper>;
+    return <ErrorMessage>Server Error! Page can't be loaded.</ErrorMessage>;
   }
 
   return (
     <StyledArticles>
       {mmaEvents &&
         mmaEvents.length > 0 &&
-        mmaEvents.map((mmaEvents: IMma) => {
+        mmaEvents.map((mmaEvents: AllEvents) => {
           return <li key={mmaEvents.id}>{mmaEvents.firstFighter}</li>;
         })}
     </StyledArticles>

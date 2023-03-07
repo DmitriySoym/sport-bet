@@ -8,19 +8,16 @@ export interface ITab {
   id: string;
 }
 
-export interface IMma {
-  firstFighter: string;
-  secondFighter: string;
-  firstWin: number;
-  secondWin: number;
-  draw: number;
-  totalRoundsMinus: number;
-  TotalRoundsPlus: number;
-  id: number;
-}
-
-export interface IFootball {
+export interface AllEvents {
   firstTeam: string;
+  secondTeam: string;
+  totalPlus: number;
+  totalMinus: number;
+  firstNotLoose: number;
+  secondNotLoose: number;
+  noDraw: number;
+
+  firstFighter: string;
   secondFighter: string;
   firstWin: number;
   secondWin: number;

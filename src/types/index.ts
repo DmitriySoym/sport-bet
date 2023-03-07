@@ -1,4 +1,4 @@
-import { Tab, ITab, IMma, IFootball } from "./types";
+import { Tab, ITab, AllEvents } from "./types";
 
 export { Tab };
-export type { ITab, IMma, IFootball };
+export type { ITab, AllEvents };

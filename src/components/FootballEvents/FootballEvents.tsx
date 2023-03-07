@@ -1,10 +1,10 @@
-import { StyledArticles, ErrorWrapper, ErrorMessage } from "./styles";
+import { StyledArticles, ErrorMessage } from "./styles";
 import { Spinner } from "components";
 import { getAllEvents, useAppSelector } from "store";
-import { IFootball, IMma } from "types";
+import { AllEvents } from "types";
 
 interface IProps {
-  footballEvents: IFootball[];
+  footballEvents: AllEvents[];
 }
 
 export const FootballEvents = ({ footballEvents }: IProps) => {
@@ -13,16 +13,14 @@ export const FootballEvents = ({ footballEvents }: IProps) => {
   if (isLoading) {
     return <Spinner />;
   } else if (error) {
-    <ErrorWrapper>
-      <ErrorMessage>Страница не может быть загружена.</ErrorMessage>
-    </ErrorWrapper>;
+    return <ErrorMessage>Server Error! Page can't be loaded.</ErrorMessage>;
   }
 
   return (
     <StyledArticles>
       {footballEvents &&
         footballEvents.length > 0 &&
-        footballEvents.map((footballEvents: IFootball) => {
+        footballEvents.map((footballEvents: AllEvents) => {
           return <li key={footballEvents.id}>{footballEvents.firstTeam}</li>;
         })}
     </StyledArticles>

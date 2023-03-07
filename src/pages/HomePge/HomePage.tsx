@@ -30,7 +30,7 @@ export const HomePage = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchEvents({ endPoint: endPoint }));
+    dispatch(fetchEvents(endPoint));
   }, [dispatch, endPoint]);
 
   return (

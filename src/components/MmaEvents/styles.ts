@@ -6,8 +6,10 @@ const StyledArticles = styled.ul`
   row-gap: 40px;
 `;
 
-const ErrorWrapper = styled.div``;
+const ErrorMessage = styled.h2`
+  padding-bottom: 4rem;
+  text-align: center;
+  font-size: 2rem;
+`;
 
-const ErrorMessage = styled.h2``;
-
-export { StyledArticles, ErrorWrapper, ErrorMessage };
+export { StyledArticles, ErrorMessage };

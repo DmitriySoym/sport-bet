@@ -1,27 +1,27 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-// import axios from "axios";
+import { AllEvents } from "types";
 
 interface IEventState {
-  events: any[];
+  events: AllEvents[];
   isLoading: boolean;
   error: null | string;
 }
 export const fetchEvents = createAsyncThunk<
-  any[],
-  { endPoint: string },
+  AllEvents[],
+  string,
   { rejectValue: string }
 >(
   "events/fetchEvents",
 
-  async ({ endPoint }, { rejectWithValue }) => {
-    try {
-      const response = await fetch(
-        `https://64058b8beed195a99f856ad5.mockapi.io/sport-bet/${endPoint}`
-      );
-      return await response.json();
-    } catch (error) {
-      return rejectWithValue("error");
+  async (endPoint, { rejectWithValue }) => {
+    const response = await fetch(
+      `https://64058b8beed195a99f856ad5.mockapi.io/sport-bet/${endPoint}`
+    );
+    if (!response.ok) {
+      return rejectWithValue("Server error");
     }
+
+    return await response.json();
   }
 );
 
@@ -36,7 +36,7 @@ const eventsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers(builder) {
-    builder.addCase(fetchEvents.pending, (state, action) => {
+    builder.addCase(fetchEvents.pending, (state) => {
       state.isLoading = true;
       state.error = null;
     });
@@ -54,4 +54,3 @@ const eventsSlice = createSlice({
 });
 
 export default eventsSlice.reducer;
-// export const { setEvents } = eventsSlice.actions;
