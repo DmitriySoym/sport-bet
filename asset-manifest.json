@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.js": "/sport-bet/static/js/main.14b6759c.js",
+    "main.js": "/sport-bet/static/js/main.85eadf80.js",
+    "static/media/logout.svg": "/sport-bet/static/media/logout.29774a0810f48cde0c9d366e1a52464a.svg",
     "index.html": "/sport-bet/index.html",
-    "main.14b6759c.js.map": "/sport-bet/static/js/main.14b6759c.js.map"
+    "main.85eadf80.js.map": "/sport-bet/static/js/main.85eadf80.js.map"
   },
   "entrypoints": [
-    "static/js/main.14b6759c.js"
+    "static/js/main.85eadf80.js"
   ]
 }
