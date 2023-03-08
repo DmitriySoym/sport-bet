@@ -9,6 +9,8 @@ import { MmaEvent } from "./MmaEvent/MmaEvent";
 import { EventsTitle } from "./EventsTitle/EventsTitle";
 import { DetailMMAEvent } from "./DetailMMAEvent/DetailMMAEvent";
 import { Footer } from "./Footer/Footer";
+import { FootballEvent } from "./FootballEvent/FootballEvent";
+import { DetailFootballEvent } from "./DetailFootballEvent/DetailFootballEvent";
 
 export {
   Header,
@@ -23,4 +25,6 @@ export {
   EventsTitle,
   DetailMMAEvent,
   Footer,
+  FootballEvent,
+  DetailFootballEvent,
 };

@@ -1,5 +1,5 @@
-import { StyledArticles, ErrorMessage } from "./styles";
-import { Spinner } from "components";
+import { StyledEvents, ErrorMessage } from "./styles";
+import { Spinner, FootballEvent } from "components";
 import { getAllEvents, useAppSelector } from "store";
 import { AllEvents } from "types";
 
@@ -17,12 +17,17 @@ export const FootballEvents = ({ footballEvents }: IProps) => {
   }
 
   return (
-    <StyledArticles>
+    <StyledEvents>
       {footballEvents &&
         footballEvents.length > 0 &&
         footballEvents.map((footballEvents: AllEvents) => {
-          return <li key={footballEvents.id}>{footballEvents.firstTeam}</li>;
+          return (
+            <FootballEvent
+              footballEvent={footballEvents}
+              key={footballEvents.id}
+            />
+          );
         })}
-    </StyledArticles>
+    </StyledEvents>
   );
 };

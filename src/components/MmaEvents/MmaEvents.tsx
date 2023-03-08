@@ -1,4 +1,4 @@
-import { StyledArticles, ErrorMessage } from "./styles";
+import { StyledEvents, ErrorMessage } from "./styles";
 import { Spinner, MmaEvent } from "components";
 import { getAllEvents, useAppSelector } from "store";
 import { AllEvents } from "types";
@@ -9,7 +9,6 @@ interface IProps {
 
 export const MmaEvents = ({ mmaEvents }: IProps) => {
   const { isLoading, error } = useAppSelector(getAllEvents);
-  // console.log(mmaEvents);
 
   if (isLoading) {
     return <Spinner />;
@@ -18,12 +17,12 @@ export const MmaEvents = ({ mmaEvents }: IProps) => {
   }
 
   return (
-    <StyledArticles>
+    <StyledEvents>
       {mmaEvents &&
         mmaEvents.length > 0 &&
         mmaEvents.map((mmaEvents: AllEvents) => {
           return <MmaEvent mmaEvent={mmaEvents} key={mmaEvents.id} />;
         })}
-    </StyledArticles>
+    </StyledEvents>
   );
 };

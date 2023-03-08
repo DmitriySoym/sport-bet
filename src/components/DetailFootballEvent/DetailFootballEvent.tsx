@@ -13,12 +13,12 @@ import {
 import { useAppDispatch, setEventInfo } from "store";
 
 interface IProps {
-  mmaEvent: AllEvents;
+  footballEvent: AllEvents;
 }
 
-export const DetailMMAEvent = ({ mmaEvent }: IProps) => {
+export const DetailFootballEvent = ({ footballEvent }: IProps) => {
   let newDate = new Date();
-  let date = newDate.getDate() + 3;
+  let date = newDate.getDate() + 4;
   let month = newDate.getMonth() + 1;
   let year = newDate.getFullYear();
   const [buttonState, setButtonState] = useState(true);
@@ -30,9 +30,9 @@ export const DetailMMAEvent = ({ mmaEvent }: IProps) => {
   const handleSubmit = () => {
     dispatch(
       setEventInfo({
-        firstTeam: mmaEvent.firstFighter,
-        secondTeam: mmaEvent.secondFighter,
-        eventType: "поединок",
+        firstTeam: footballEvent.firstTeam,
+        secondTeam: footballEvent.secondTeam,
+        eventType: "матч",
       })
     );
   };
@@ -48,23 +48,23 @@ export const DetailMMAEvent = ({ mmaEvent }: IProps) => {
       <form action="#">
         <Wrapper>
           <WrapperItem>
-            <EventName>{mmaEvent.firstFighter} - победа</EventName>
+            <EventName>{footballEvent.firstTeam} - победа</EventName>
             <Coefficient>
-              коэфф. - {mmaEvent.firstWin}{" "}
+              коэфф. - {footballEvent.firstWin}{" "}
               <input type="radio" name="event" onChange={handleButtonEnable} />
             </Coefficient>
           </WrapperItem>
           <WrapperItem>
-            <EventName>{mmaEvent.secondFighter} - победа</EventName>
+            <EventName>{footballEvent.secondTeam} - победа</EventName>
             <Coefficient>
-              коэфф. - {mmaEvent.secondWin}{" "}
+              коэфф. - {footballEvent.secondWin}{" "}
               <input type="radio" name="event" onChange={handleButtonEnable} />
             </Coefficient>
           </WrapperItem>
           <WrapperItem>
             <EventName>Ничья</EventName>
             <Coefficient>
-              коэфф. - {mmaEvent.draw}{" "}
+              коэфф. - {footballEvent.draw}{" "}
               <input type="radio" name="event" onChange={handleButtonEnable} />
             </Coefficient>
           </WrapperItem>

@@ -1,19 +1,13 @@
 import { DetailMMAEvent, Spinner } from "components";
 import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { Color } from "ui";
 import {
   fetchDitailEvent,
   getDetailEvent,
   useAppDispatch,
   useAppSelector,
 } from "store";
-import { AllEvents } from "types";
-import { ErrorMessage, ButtonBack, Wrapper, Date } from "./styles";
-
-interface IProps {
-  mmaEvent: AllEvents;
-}
+import { ErrorMessage, ButtonBack, Wrapper } from "./styles";
 
 export const DetailMMAPage = () => {
   const dispatch = useAppDispatch();
